@@ -20,10 +20,10 @@ include ':TorangLocationService'
 project(':TorangLocationService').projectDir = new File('../../../Utils/TorangLocationService/TorangLocationService')
 
 include ':screen_finding'
-project(':screen_finding').projectDir = new File('../../../Screens/Finding/screen_finding')
+project(':screen_finding').projectDir = new File('/Finding')
 
 include ':screen_filter'
-project(':screen_filter').projectDir = new File('../../../Screens/Filter/screen_filter')
+project(':screen_filter').projectDir = new File('./Filter')
 
 include ':screen_travelmode'
-project(':screen_travelmode').projectDir = new File('../../../Screens/TravelMode/screen_travelmode')
+project(':screen_travelmode').projectDir = new File('./TravelMode')

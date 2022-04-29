@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="/Finding" />
+            <option value="$PROJECT_DIR$/../../../Core/TorangCore/torang_core" />
+            <option value="$PROJECT_DIR$/../../../Repository/TorangRepository" />
+            <option value="$PROJECT_DIR$/../../../Repository/TorangTestRepository/testrepository" />
+            <option value="$PROJECT_DIR$/../../../Screens/Map/screen_map" />
+            <option value="$PROJECT_DIR$/../../../Screens/Search/screen_search" />
+            <option value="$PROJECT_DIR$/../../../Utils/TorangImageLoader/torangimageloader" />
+            <option value="$PROJECT_DIR$/../../../Utils/TorangLocationService/TorangLocationService" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Filter" />
+            <option value="$PROJECT_DIR$/TravelMode" />
+            <option value="$PROJECT_DIR$/app" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

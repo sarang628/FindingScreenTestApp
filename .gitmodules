@@ -1,3 +1,9 @@
 [submodule "Finding"]
 	path = Finding
 	url = https://github.com/sarang628/Finding.git
+[submodule "TravelMode"]
+	path = TravelMode
+	url = https://github.com/sarang628/TravelMode
+[submodule "Filter"]
+	path = Filter
+	url = https://github.com/sarang628/Filter
