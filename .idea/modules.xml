@@ -3,12 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Filter/Filter.ScreenFindingtest.screen_filter.iml" filepath="$PROJECT_DIR$/.idea/modules/Filter/Filter.ScreenFindingtest.screen_filter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-545466246/Finding.ScreenFindingtest.screen_finding.iml" filepath="$PROJECT_DIR$/.idea/modules/-545466246/Finding.ScreenFindingtest.screen_finding.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ScreenFindingtest.iml" filepath="$PROJECT_DIR$/.idea/modules/ScreenFindingtest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1271559817/ScreenFindingtest.TorangLocationService.iml" filepath="$PROJECT_DIR$/.idea/modules/-1271559817/ScreenFindingtest.TorangLocationService.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/1436836604/ScreenFindingtest.TorangRepository.iml" filepath="$PROJECT_DIR$/.idea/modules/1436836604/ScreenFindingtest.TorangRepository.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/482755965/ScreenFindingtest.TorangTestRepository.iml" filepath="$PROJECT_DIR$/.idea/modules/482755965/ScreenFindingtest.TorangTestRepository.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ScreenFindingtest.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ScreenFindingtest.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Finding/ScreenFindingtest.screen_finding.iml" filepath="$PROJECT_DIR$/.idea/modules/Finding/ScreenFindingtest.screen_finding.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1736913222/ScreenFindingtest.screen_map.iml" filepath="$PROJECT_DIR$/.idea/modules/-1736913222/ScreenFindingtest.screen_map.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-856097966/ScreenFindingtest.screen_search.iml" filepath="$PROJECT_DIR$/.idea/modules/-856097966/ScreenFindingtest.screen_search.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/108622984/ScreenFindingtest.torang_core.iml" filepath="$PROJECT_DIR$/.idea/modules/108622984/ScreenFindingtest.torang_core.iml" />

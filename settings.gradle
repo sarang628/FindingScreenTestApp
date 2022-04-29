@@ -20,7 +20,7 @@ include ':TorangLocationService'
 project(':TorangLocationService').projectDir = new File('../../../Utils/TorangLocationService/TorangLocationService')
 
 include ':screen_finding'
-project(':screen_finding').projectDir = new File('/Finding')
+project(':screen_finding').projectDir = new File('./Finding')
 
 include ':screen_filter'
 project(':screen_filter').projectDir = new File('./Filter')

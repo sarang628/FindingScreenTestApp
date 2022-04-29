@@ -7,3 +7,6 @@
 [submodule "Filter"]
 	path = Filter
 	url = https://github.com/sarang628/Filter
+[submodule "Map"]
+	path = Map
+	url = https://github.com/sarang628/Map.git
