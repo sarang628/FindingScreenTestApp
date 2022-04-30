@@ -10,3 +10,9 @@
 [submodule "Map"]
 	path = Map
 	url = https://github.com/sarang628/Map.git
+[submodule "FindingScreenTestApp"]
+	path = FindingScreenTestApp
+	url = https://github.com/sarang628/FindingScreenTestApp.git
+[submodule "TorangCore"]
+	path = TorangCore
+	url = https://github.com/sarang628/TorangCore.git

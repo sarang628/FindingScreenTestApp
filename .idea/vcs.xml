@@ -2,6 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Filter" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Finding" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Map" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/TravelMode" vcs="Git" />
   </component>
 </project>

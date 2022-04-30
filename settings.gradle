@@ -2,22 +2,22 @@ rootProject.name = "ScreenFindingtest"
 include ':app'
 
 include ':torang_core'
-project(':torang_core').projectDir = new File('../../../Core/TorangCore/torang_core')
+project(':torang_core').projectDir = new File('./TorangCore/torang_core')
 include ':torangimageloader'
-project(':torangimageloader').projectDir = new File('../../../Utils/TorangImageLoader/torangimageloader')
+project(':torangimageloader').projectDir = new File('./TorangImageLoader/torangimageloader')
 include ':TorangRepository'
-project(':TorangRepository').projectDir = new File('../../../Repository/TorangRepository')
+project(':TorangRepository').projectDir = new File('./Repository/TorangRepository')
 include ':TorangTestRepository'
-project(':TorangTestRepository').projectDir = new File('../../../Repository/TorangTestRepository/testrepository')
+project(':TorangTestRepository').projectDir = new File('./Repository/TorangTestRepository/testrepository')
 
 include ':screen_search'
-project(':screen_search').projectDir = new File('../../../Screens/Search/screen_search')
+project(':screen_search').projectDir = new File('./Search')
 
 include ':screen_map'
-project(':screen_map').projectDir = new File('../../../Screens/Map/screen_map')
+project(':screen_map').projectDir = new File('./Map')
 
 include ':TorangLocationService'
-project(':TorangLocationService').projectDir = new File('../../../Utils/TorangLocationService/TorangLocationService')
+project(':TorangLocationService').projectDir = new File('./TorangLocationService/TorangLocationService')
 
 include ':screen_finding'
 project(':screen_finding').projectDir = new File('./Finding')
