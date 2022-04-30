@@ -215,10 +215,12 @@
     <orderEntry type="library" name="Gradle: com.google.dagger:dagger-lint-aar:2.38.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.play:core:1.10.2@aar" level="project" />
     <orderEntry type="module" module-name="TorangCore.ScreenFindingtest.torang_core" />
+    <orderEntry type="module" module-name="TorangImageLoader.ScreenFindingtest.torangimageloader" />
     <orderEntry type="module" module-name="Map.ScreenFindingtest.screen_map" />
     <orderEntry type="module" module-name="ScreenFindingtest.screen_finding" />
     <orderEntry type="module" module-name="TravelMode.ScreenFindingtest.screen_travelmode" />
     <orderEntry type="module" module-name="Filter.ScreenFindingtest.screen_filter" />
+    <orderEntry type="module" module-name="TorangLocationService.ScreenFindingtest.TorangLocationService" />
     <orderEntry type="module" module-name="testrepository.ScreenFindingtest.TorangTestRepository" />
     <orderEntry type="module" module-name="Repository.ScreenFindingtest.TorangRepository" />
   </component>

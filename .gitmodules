@@ -25,3 +25,6 @@
 [submodule "TorangImageLoader"]
 	path = TorangImageLoader
 	url = https://github.com/sarang628/TorangImageLoader.git
+[submodule "Search"]
+	path = Search
+	url = https://github.com/sarang628/Search.git
