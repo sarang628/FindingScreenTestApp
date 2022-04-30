@@ -19,3 +19,9 @@
 [submodule "Repository"]
 	path = Repository
 	url = https://github.com/sarang628/Repository.git
+[submodule "TorangLocationService"]
+	path = TorangLocationService
+	url = https://github.com/sarang628/TorangLocationService.git
+[submodule "TorangImageLoader"]
+	path = TorangImageLoader
+	url = https://github.com/sarang628/TorangImageLoader.git
