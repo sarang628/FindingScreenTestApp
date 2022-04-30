@@ -16,3 +16,6 @@
 [submodule "TorangCore"]
 	path = TorangCore
 	url = https://github.com/sarang628/TorangCore.git
+[submodule "Repository"]
+	path = Repository
+	url = https://github.com/sarang628/Repository.git
