@@ -5,9 +5,11 @@ import com.example.torang_core.data.AppDatabase
 import com.example.torang_core.repository.LoginRepository
 import com.example.torang_core.repository.MyReviewRepository
 import com.example.torang_core.repository.MyReviewsRepository
+import com.example.torang_core.repository.NationRepository
 import com.example.torangrepository.LoginRepositoryImpl
 import com.example.torangrepository.MyReviewRepositoryImpl
 import com.example.torangrepository.MyReviewsRepositoryImpl
+import com.example.torangrepository.NationRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -28,24 +30,18 @@ class DatabaseModule {
     }
 }
 
-
-@Module
-@InstallIn(SingletonComponent::class)
-abstract class RepositoryModule {
-    @Binds
-    abstract fun provideMyReviewRepository(myReviewRepositoryImpl: MyReviewRepositoryImpl): MyReviewRepository
-}
-
 @Module
 @InstallIn(SingletonComponent::class)
 abstract class MyReviewsRepositoryProvider() {
     @Binds
     abstract fun provideMyReviewsRepository(myReviewsRepositoryImpl: MyReviewsRepositoryImpl): MyReviewsRepository
-}
 
-@Module
-@InstallIn(SingletonComponent::class)
-abstract class LoginRepositoryModule {
     @Binds
     abstract fun provideLoginRepository(loginRepositoryImpl: LoginRepositoryImpl): LoginRepository
+
+    @Binds
+    abstract fun provideMyReviewRepository(myReviewRepositoryImpl: MyReviewRepositoryImpl): MyReviewRepository
+
+    @Binds
+    abstract fun provideNationRepository(nationRepositoryImpl: NationRepositoryImpl): NationRepository
 }
