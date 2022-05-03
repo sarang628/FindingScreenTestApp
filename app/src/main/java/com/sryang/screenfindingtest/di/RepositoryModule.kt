@@ -78,8 +78,8 @@ class TestFindRepositoryImpl @Inject constructor() : FindRepository {
         isFirstRequestLocation.emit(true)
         isRequestingLocation.emit(true)
         //3초있다가 위치를 받은것으로 처리하는 테스트코드
-        delay(3000)
-        isRequestingLocation.emit(false)
+        //delay(3000)
+        //isRequestingLocation.emit(false)
     }
 
     /**
