@@ -4,6 +4,7 @@ import android.content.Context
 import com.example.torang_core.data.AppDatabase
 import com.example.torang_core.data.model.*
 import com.example.torang_core.repository.*
+import com.example.torang_core.util.Logger
 import com.example.torangrepository.*
 import dagger.Binds
 import dagger.Module
@@ -15,6 +16,8 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -35,6 +38,9 @@ abstract class MyReviewsRepositoryProvider() {
 
     @Binds
     abstract fun provideFindRepository(findRepository: TestFindRepositoryImpl): FindRepository
+
+    @Binds
+    abstract fun provideFilterRepository(filterRepository: TestFilterRepository): FilterRepository
 }
 
 @Singleton
@@ -54,15 +60,15 @@ class TestFindRepositoryImpl @Inject constructor() : FindRepository {
         northEastLongitude: Double,
         southWestLatitude: Double,
         southWestLongitude: Double,
-        searchType: Filter.SearchType
+        searchType: SearchType
     ) {
 
     }
 
 
     //최초 위치요쳥을 false로 설정 시 화면단에서 요청해야함
-    val isFirstRequestLocation = MutableStateFlow(false)
-    val isRequestingLocation = MutableStateFlow(false)
+    private val isFirstRequestLocation = MutableStateFlow(false)
+    private val isRequestingLocation = MutableStateFlow(false)
 
     /**
      * 화면 첫 진입 시 위치를 요청해야하는지에 대한 상태
@@ -96,4 +102,28 @@ class TestFindRepositoryImpl @Inject constructor() : FindRepository {
         isRequestingLocation.emit(false)
     }
 
+}
+
+@Singleton
+class TestFilterRepository @Inject constructor() : FilterRepository {
+    private val filter = MutableStateFlow(Filter())
+
+    override fun getCurrentFilter(): StateFlow<Filter> {
+        return filter
+    }
+
+    override suspend fun selectRestaurantTyoe(food: RestaurantType) {
+        filter.update {
+            val list = ArrayList<RestaurantType>()
+            list.addAll(it.restaurantTypes)
+
+            if (list.contains(food))
+                list.remove(food)
+            else
+                list.add(food)
+
+            Logger.d("filter copy")
+            it.copy(restaurantTypes = list)
+        }
+    }
 }
