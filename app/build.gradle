@@ -60,6 +60,7 @@ dependencies {
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$junitTestVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoCoreVersion"
+    implementation 'com.google.code.gson:gson:2.8.6'
 
     /** HILT */
     implementation "com.google.dagger:hilt-android:$hiltVersion"

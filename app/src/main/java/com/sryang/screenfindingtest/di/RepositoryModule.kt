@@ -1,15 +1,17 @@
 package com.sarang.torang.di
 
 import android.content.Context
-import android.text.TextUtils
-import com.example.torang_core.data.AppDatabase
 import com.example.torang_core.data.model.*
 import com.example.torang_core.repository.*
 import com.example.torang_core.util.Logger
-import com.example.torangrepository.*
+import com.example.torangrepository.LoginRepositoryImpl
+import com.example.torangrepository.MyReviewRepositoryImpl
+import com.example.torangrepository.MyReviewsRepositoryImpl
+import com.example.torangrepository.NationRepositoryImpl
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import dagger.Binds
 import dagger.Module
-import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
@@ -18,7 +20,6 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
-import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -45,9 +46,13 @@ abstract class MyReviewsRepositoryProvider() {
 }
 
 @Singleton
-class TestFindRepositoryImpl @Inject constructor() : FindRepository {
+class TestFindRepositoryImpl @Inject constructor(@ApplicationContext val context: Context) :
+    FindRepository {
+
+    val searchedRestaurants = MutableStateFlow<List<Restaurant>>(ArrayList())
+
     override fun getSearchedRestaurant(): Flow<List<Restaurant>> {
-        return MutableStateFlow(ArrayList())
+        return searchedRestaurants
     }
 
     override suspend fun searchRestaurant(
@@ -63,7 +68,20 @@ class TestFindRepositoryImpl @Inject constructor() : FindRepository {
         southWestLongitude: Double,
         searchType: SearchType
     ) {
+        val list: ArrayList<Restaurant> = ArrayList()
+        list.add(Restaurant().apply {
+            lat = northEastLatitude
+            lon = northEastLongitude
+        })
 
+        context.assets.open("restaurants.json").use { inputStream ->
+            com.google.gson.stream.JsonReader(inputStream.reader()).use { jsonReader ->
+                val imageType = object : TypeToken<List<Restaurant>>() {}.type
+                val imageList: List<Restaurant> = Gson().fromJson(jsonReader, imageType)
+
+                searchedRestaurants.emit(imageList)
+            }
+        }
     }
 
 
@@ -71,6 +89,7 @@ class TestFindRepositoryImpl @Inject constructor() : FindRepository {
     private val isFirstRequestLocation = MutableStateFlow(false)
     private val isRequestingLocation = MutableStateFlow(false)
     private val searchBoundRestaurantTrigger = MutableStateFlow(false)
+    private val currentPosition = MutableStateFlow(0)
 
     /**
      * 화면 첫 진입 시 위치를 요청해야하는지에 대한 상태
@@ -114,6 +133,13 @@ class TestFindRepositoryImpl @Inject constructor() : FindRepository {
         return searchBoundRestaurantTrigger
     }
 
+    override suspend fun setCurrentPosition(position: Int) {
+        currentPosition.emit(position)
+    }
+
+    override fun getCurrentPosition(): StateFlow<Int> {
+        return currentPosition
+    }
 }
 
 @Singleton
