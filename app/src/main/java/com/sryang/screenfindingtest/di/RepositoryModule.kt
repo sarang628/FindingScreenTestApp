@@ -70,6 +70,7 @@ class TestFindRepositoryImpl @Inject constructor() : FindRepository {
     //최초 위치요쳥을 false로 설정 시 화면단에서 요청해야함
     private val isFirstRequestLocation = MutableStateFlow(false)
     private val isRequestingLocation = MutableStateFlow(false)
+    private val searchBoundRestaurantTrigger = MutableStateFlow(false)
 
     /**
      * 화면 첫 진입 시 위치를 요청해야하는지에 대한 상태
@@ -101,6 +102,16 @@ class TestFindRepositoryImpl @Inject constructor() : FindRepository {
      */
     override suspend fun notifyReceiveLocation() {
         isRequestingLocation.emit(false)
+    }
+
+    override suspend fun searchBoundRestaurant() {
+        searchBoundRestaurantTrigger.emit(true)
+        delay(1)
+        searchBoundRestaurantTrigger.emit(false)
+    }
+
+    override fun getSearchBoundRestaurnatTrigger(): StateFlow<Boolean> {
+        return searchBoundRestaurantTrigger
     }
 
 }
@@ -162,5 +173,9 @@ class TestFilterRepository @Inject constructor() : FilterRepository {
                 )
             }
         }
+    }
+
+    override suspend fun getFilter(): Filter {
+        return filter.value
     }
 }
