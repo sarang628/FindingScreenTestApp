@@ -17,7 +17,7 @@ class TestFilterRepository @Inject constructor() : FilterRepository {
         return filter
     }
 
-    override suspend fun selectRestaurantTyoe(food: RestaurantType) {
+    override suspend fun selectRestaurantType(food: RestaurantType) {
         filter.update {
             val list = ArrayList<RestaurantType>()
             list.addAll(it.restaurantTypes)
