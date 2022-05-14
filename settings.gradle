@@ -27,3 +27,6 @@ project(':screen_filter').projectDir = new File('./Filter')
 
 include ':screen_travelmode'
 project(':screen_travelmode').projectDir = new File('./TravelMode')
+
+include ':screen_card_info'
+project(':screen_card_info').projectDir = new File('./CardInfo')
