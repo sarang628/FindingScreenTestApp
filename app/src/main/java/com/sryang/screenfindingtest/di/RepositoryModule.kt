@@ -3,6 +3,7 @@ package com.sarang.torang.di
 import com.example.torang_core.repository.*
 import com.example.torangrepository.*
 import com.sryang.screenfindingtest.TestFilterRepository
+import com.sryang.screenfindingtest.TestFindRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
