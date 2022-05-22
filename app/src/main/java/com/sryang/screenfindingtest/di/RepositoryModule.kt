@@ -24,6 +24,9 @@ abstract class MyReviewsRepositoryProvider() {
     @Binds
     abstract fun provideNationRepository(nationRepositoryImpl: NationRepositoryImpl): NationRepository
 
+//    @Binds
+//    abstract fun provideFindRepository(findRepository: TestFindRepositoryImpl): FindRepository
+
     @Binds
     abstract fun provideFindRepository(findRepository: FindRepositoryImpl): FindRepository
 

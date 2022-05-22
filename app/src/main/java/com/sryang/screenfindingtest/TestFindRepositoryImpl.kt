@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.pm.PackageManager
 import com.example.torang_core.data.model.*
 import com.example.torang_core.repository.FindRepository
+import com.example.torang_core.repository.RequestLocationResult
 import com.example.torang_core.util.Logger
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -78,12 +79,16 @@ class TestFindRepositoryImpl @Inject constructor(@ApplicationContext val context
     /**
      * 위치를 요청했다고 알려줌
      */
-    override suspend fun notifyRequestLocation() {
-        isFirstRequestLocation.emit(true)
-        isRequestingLocation.emit(true)
-        //3초있다가 위치를 받은것으로 처리하는 테스트코드
-        //delay(3000)
+    override suspend fun notifyRequestLocation() : RequestLocationResult {
+        //성공
+        //return RequestLocationResult.SUCCESS
+        //설정 화면 이동 팝업
+        //return RequestLocationResult.PERMISSION_DENIED
         //isRequestingLocation.emit(false)
+        //isFirstRequestLocation.emit(true)
+        //isRequestingLocation.emit(true)
+        //위치 권한 필요 팝업
+        return RequestLocationResult.NEED_LOCATION_PERMISSION
     }
 
     /**
@@ -128,14 +133,6 @@ class TestFindRepositoryImpl @Inject constructor(@ApplicationContext val context
         isFirstRequestLocationPermission.emit(false)
     }
 
-    override suspend fun checkFirstRequestLocationPermission() {
-        Logger.d("")
-        //테스트로 퍼미션 체크 시 무조건 true로 보냄
-        if (isFirstRequestLocationPermission.value == true) {
-            Logger.w("same value no emition!")
-        }
-        isFirstRequestLocationPermission.emit(true)
-    }
 
     override fun hasGrantPermission(): MutableStateFlow<Int> {
         return hasGrantPermission
