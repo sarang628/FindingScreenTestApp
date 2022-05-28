@@ -25,6 +25,3 @@
 [submodule "Search"]
 	path = Search
 	url = https://github.com/sarang628/Search.git
-[submodule "CardInfo"]
-	path = CardInfo
-	url = https://github.com/sarang628/CardInfo.git
