@@ -123,10 +123,6 @@ class TestFindRepositoryImpl @Inject constructor(@ApplicationContext val context
         return currentPosition
     }
 
-    override suspend fun isFirstRequestLocationPermission(): StateFlow<Boolean> {
-        return isFirstRequestLocationPermission
-    }
-
     //위치원한 요청에 대한 사용자 응답
     override suspend fun requestLocationPermission(b: Boolean) {
         //팝업 계속 나오게 하기위해 처음 요청인지 테스트로 초기화
@@ -138,7 +134,19 @@ class TestFindRepositoryImpl @Inject constructor(@ApplicationContext val context
         return hasGrantPermission
     }
 
+    override fun showRestaurantCardAndFilter(): Flow<Boolean> {
+        TODO("Not yet implemented")
+    }
+
     override suspend fun permissionGranated() {
         hasGrantPermission.emit(PackageManager.PERMISSION_GRANTED)
+    }
+
+    override suspend fun clickMap() {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun searchIfRestaurantEmpty() {
+        TODO("Not yet implemented")
     }
 }
