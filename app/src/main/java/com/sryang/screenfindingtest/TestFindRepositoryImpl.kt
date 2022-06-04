@@ -134,7 +134,7 @@ class TestFindRepositoryImpl @Inject constructor(@ApplicationContext val context
         return hasGrantPermission
     }
 
-    override fun showRestaurantCardAndFilter(): Flow<Boolean> {
+    override fun showRestaurantCardAndFilter(): StateFlow<Boolean> {
         TODO("Not yet implemented")
     }
 
