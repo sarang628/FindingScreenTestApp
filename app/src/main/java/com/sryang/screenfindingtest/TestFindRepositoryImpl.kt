@@ -105,16 +105,6 @@ class TestFindRepositoryImpl @Inject constructor(@ApplicationContext val context
         isRequestingLocation.emit(false)
     }
 
-    override suspend fun searchBoundRestaurant() {
-        searchBoundRestaurantTrigger.emit(true)
-        delay(1)
-        searchBoundRestaurantTrigger.emit(false)
-    }
-
-    override fun getSearchBoundRestaurnatTrigger(): StateFlow<Boolean> {
-        return searchBoundRestaurantTrigger
-    }
-
     override suspend fun setCurrentPosition(position: Int) {
         currentPosition.emit(position)
     }
